@@ -1,0 +1,16 @@
+maxconn = 10000
+httpchk = "GET /"
+
+[front-end]
+listen = "*"
+port = 11080
+mode = "http"
+default-backend = "default_static"
+
+[status]
+enabled = true
+listen = "127.0.0.1"
+port = 19080
+user = "admin"
+password = "password"
+uri = "/haproxy-stats"
