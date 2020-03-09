@@ -1,0 +1,23 @@
+---
+driver:
+  name: vagrant
+  synced_folders:
+   - ['.', '/tmp/habitat']
+
+provisioner:
+  name: shell
+  script: test/scripts/bootstrap.sh
+
+platforms:
+  - name: centos-8
+
+verifier:
+  name: inspec
+
+suites:
+  - name: test
+    verifier:
+      inspec_tests:
+        - path: test/integration/default
+    attributes:
+      build: false

@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# Check for additional configuration files and set them if present
+configfiles=''
+if  ls /hab/user/haproxy/config/*.config 1> /dev/null 2>&1 ;
+then
+  configfiles=$(for cfgfile in `ls /hab/user/haproxy/config/*.config` ; do echo -n " -f ${cfgfile} " ; done)
+fi
+
+# Run haproxy with default configuration + any user-specified configuration files
+haproxy -f {{pkg.svc_config_path}}/haproxy.conf ${configfiles} -db

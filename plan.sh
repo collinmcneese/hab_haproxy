@@ -1,13 +1,13 @@
 pkg_name=haproxy
 pkg_origin=collinmcneese
 pkg_maintainer="Collin McNeese <cmcneese@chef.io>"
-pkg_version=2.1.2 # Bump version to match compiled version of haproxy to use and reference in pkg_source
+pkg_version=2.1.3 # Bump version to match version of haproxy to use and reference in pkg_source
 # From upstream core/haproxy
 pkg_license=('GPL-2.0' 'LGPL-2.1')
 pkg_source="https://www.haproxy.org/download/2.1/src/haproxy-${pkg_version}.tar.gz"
 pkg_upstream_url="https://www.haproxy.org/"
-pkg_shasum=6079b08a8905ade5a9a2835ead8963ee10a855d8508a85efb7181eea2d310b77
-pkg_svc_run='haproxy -f config/haproxy.conf -db'
+pkg_shasum=bb678e550374d0d9d9312885fb9d270b501dae9e3b336f0a4379c667dae00b59
+#pkg_svc_run=''
 pkg_svc_user=root
 pkg_svc_group=root
 pkg_exports=(
@@ -15,9 +15,6 @@ pkg_exports=(
   [status-port]=status.port
 )
 pkg_exposes=(port status-port)
-# pkg_binds=(
-#   [backend]="port"
-# )
 pkg_deps=(
   core/zlib
   core/pcre

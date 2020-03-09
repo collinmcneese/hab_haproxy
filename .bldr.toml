@@ -1,0 +1,4 @@
+[haproxy]
+build_targets = [
+  "x86_64-linux"
+]
