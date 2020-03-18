@@ -1,3 +1,3 @@
 # hab_haproxy
 
-Wrapper for `core/haproxy` plan to allow for customization
+Modified version of upstream `core/haproxy` plan to allow for customization.
