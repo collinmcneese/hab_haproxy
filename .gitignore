@@ -1,6 +1,5 @@
 
 ### Project-Specific ###
-cookbooks/hab_opbldr_update/attributes/local_default.rb
 results/
 policyfiles/*.lock.json
 nodes/
