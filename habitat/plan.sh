@@ -11,7 +11,7 @@ pkg_shasum=391c705a46c6208a63a67ea842c6600146ca24618531570c89c7915b0c6a54d6
 pkg_svc_user=root
 pkg_svc_group=root
 pkg_exports=(
-  [port]=front-end.port
+  [port]=frontend.port
   [status-port]=status.port
 )
 pkg_exposes=(port status-port)
