@@ -1,11 +1,29 @@
 maxconn = 10000
 httpchk = "GET /"
 
-[front-end]
+# Define all front-ends
+[frontend]
+name = "default"
 listen = "*"
 port = 11080
 mode = "http"
-default-backend = "default_static"
+backend = "example"
+
+[backend]
+# Define all backends
+[backend.example]
+name = "example"
+# Define servers for each backend
+[backend.example.servers.1]
+name = "server1"
+host = "127.0.0.1"
+port = "19080"
+options = ""
+[backend.example.servers.2]
+name = "server2"
+host = "127.0.0.1"
+port = "19080"
+options = ""
 
 [status]
 enabled = true

@@ -1,9 +1,9 @@
 #!/bin/sh
 
 # Creates user configuration path for service, if missing.
-if id hab ;
-then
-  if [[ ! -d /hab/user/haproxy/config ]] ; then mkdir -p /hab/user/haproxy/config ; fi
-  chown hab:hab /hab/user/haproxy/config/includes
-fi
+# if id hab ;
+# then
+#   if [[ ! -d /hab/user/haproxy/config ]] ; then mkdir -p /hab/user/haproxy/config ; fi
+#   chown hab:hab /hab/user/haproxy/config/includes
+# fi
 
