@@ -3,19 +3,12 @@
 # The InSpec reference, with examples and extensive documentation, can be
 # found at https://www.inspec.io/docs/reference/resources/
 
-control 'service checks' do
+control 'service_checks' do
   impact 0.7
-  title 'Check for creation of service.'
-  # http://inspec.io/docs/reference/resources/systemd_service/
-  describe.one do
-    describe systemd_service('hab-sup') do
-      it { should be_installed }
-      it { should be_enabled }
-    end
-    describe service('hab-sup') do
-      it { should be_installed }
-      it { should be_enabled }
-    end
+  title 'Check for running haproxy service'
+  describe command('hab svc status') do
+    its('exit_status') { should cmp 0 }
+    its('stdout') { should match /haproxy.*up.*up/ }
   end
 end
 
