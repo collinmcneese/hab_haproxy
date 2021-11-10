@@ -33,7 +33,7 @@ jobs:
         sudo hab license accept
         sudo cp -f ~/.hab/cache/keys/* /hab/cache/keys/
         sudo hab sup run &
-        while [ ! hab svc status ] ; do echo "waiting for supervisor to start" ; sleep 2 ; done
+        while [ ! sudo hab svc status ] ; do echo "waiting for supervisor to start" ; sleep 10 ; done
         source results/last_build.env
         sudo chown -R hab:hab /hab
         sudo hab pkg install results/${pkg_artifact}
