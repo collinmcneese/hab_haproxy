@@ -41,8 +41,7 @@ do_build() {
     USE_ZLIB=1 \
     USE_GETADDRINFO=1 \
     ADDINC="${CFLAGS}" \
-    ADDLIB="${LDFLAGS}" \
-    EXTRA_OBJS="contrib/prometheus-exporter/service-prometheus.o"
+    ADDLIB="${LDFLAGS}"
 }
 
 do_install() {
